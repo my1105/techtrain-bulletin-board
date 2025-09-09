@@ -3,8 +3,7 @@ import "./App.css";
 
 function App() {
   const [threads, setThreads] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+
 
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -14,13 +13,9 @@ function App() {
         if (!res.ok) throw new Error("APIリクエストに失敗しました");
         return res.json();
       })
-      .then((data) => setThreads(data))
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
+      .then((data) => setThreads(data));
   }, [API_BASE_URL]);
 
-  if (loading) return <div className="center">読み込み中...</div>;
-  if (error) return <div className="center error">エラー: {error}</div>;
 
   return (
     <div className="app">
