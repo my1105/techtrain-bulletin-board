@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 function App() {
   const [threads, setThreads] = useState([]);
-
-
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/threads`)
@@ -14,7 +14,7 @@ function App() {
         return res.json();
       })
       .then((data) => setThreads(data));
-  }, [API_BASE_URL]);
+  });
 
 
   return (
