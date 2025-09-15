@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Header from "./components/Header"; 
 import "./App.css";
 
 
@@ -19,13 +20,7 @@ function App() {
 
   return (
     <div className="app">
-
-      <header className="header">
-        <div className="header-left">掲示板</div>
-        <div className="header-right">
-          <a href="#" className="new-thread-link">スレッドを立てる</a>
-        </div>
-      </header>
+      <Header />
 
       <main className="container">
         <h1>新着スレッド</h1>
