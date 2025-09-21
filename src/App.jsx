@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import Header from "./components/Header"; 
+import { Link } from "react-router-dom";
+import Header from "./components/Header";
 import "./App.css";
 
 
@@ -27,7 +28,12 @@ function App() {
         <div className="thread-list">
           {threads.map((thread) => (
             <div key={thread.id} className="thread-card">
-              <p className="thread-title">{thread.title}</p>
+              <Link 
+                to={`/threads/${thread.id}`} 
+                state={{ title: thread.title }}
+              >
+                <p className="thread-title">{thread.title}</p>
+              </Link>
             </div>
           ))}
         </div>
