@@ -27,14 +27,12 @@ function App() {
         <h1>新着スレッド</h1>
         <div className="thread-list">
           {threads.map((thread) => (
-            <div key={thread.id} className="thread-card">
-              <Link 
+              <Link key={thread.id} className="thread-card"
                 to={`/threads/${thread.id}`} 
                 state={{ title: thread.title }}
               >
                 <p className="thread-title">{thread.title}</p>
               </Link>
-            </div>
           ))}
         </div>
       </main>
