@@ -72,14 +72,7 @@ const ThreadDetail = () => {
               <ul className="thread-list" style={{ listStyle: "none", padding: 0, margin: 0 }}>
                 {posts.map((p) => (
                   <li key={p.id} className="thread-card">
-                    <p
-                      className="post-body"
-                      style={{
-                        wordWrap: "break-word",
-                        wordBreak: "break-word",
-                        whiteSpace: "pre-wrap"
-                      }}
-                    >
+                    <p className="post-body">
                       {p.post}
                     </p>
                   </li>

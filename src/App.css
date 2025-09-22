@@ -140,6 +140,14 @@ a:hover {
   animation: slideUp 0.3s ease;
 }
 
+.post-body {
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+
+
 @keyframes slideUp {
   from {
     transform: translate(-50%, 100%);
